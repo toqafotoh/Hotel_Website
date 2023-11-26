@@ -298,6 +298,25 @@
                 <div class="col-lg-4">
                     <div class="room-booking">
                         <h3>Your Reservation</h3>
+                        <!-- message -->
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert" id="messageSuccess" style="display: none;">
+                            <strong>This Room</strong>Not
+                            <a href="#" class="alert-link">Available</a>You Can't Book Room Now
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                    </div>
+                    <!-- start message error -->
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert" id="messageError"
+                        style="display: none">
+                        <strong>Error!</strong> You
+                        <a href="#" class="alert-link">Have</a> to fill the Check-in  and Check-out
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <!-- end message error -->
+                    <!-- message -->
                         <form action="#">
                             <div class="check-date">
                                 <label for="date-in">Check In:</label>
@@ -321,7 +340,7 @@
                                     <option value="">1 Room</option>
                                 </select>
                             </div>
-                            <button type="submit">Check Availability</button>
+                            <button type="button" onclick="notAvailable()">Check Availability</button>
                         </form>
                     </div>
                 </div>
@@ -407,6 +426,26 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        const elementNotAvailable = document.getElementById("messageSuccess");
+        const elementError = document.getElementById("messageError");
+        function notAvailable(){
+            var check_in = document.getElementById("date-in");
+            var check_out = document.getElementById("date-out");
+            if(check_in.value != "" && check_out.value != ""){
+                elementNotAvailable.style.display = "block";
+                setTimeout(() => {
+                    elementNotAvailable.style.display = "none";
+                }, 5000);
+                    }
+            else{
+                elementError.style.display = "block";
+                setTimeout(() => {
+                    elementError.style.display = "none";
+                }, 3000);
+                    }
+            }
+    </script>
 </body>
 
 </html>

@@ -105,7 +105,8 @@
                             <nav class="mainmenu">
                                 <ul>
                                     <li class="active"><a href="./index.html">Home</a></li>
-                                    <li><a href="#rooms">Rooms</a></li>
+                                    <!-- i don't know how to link to back to mmmm i just don't know so i just comment it -->
+                                    <!-- <li><a href="./index.html">Rooms</a></li> -->
                                     <li><a href="./index.html">Room Categories</a>
                                         <ul class="dropdown">
                                             <li><a href="./Single-Room.html">single Room</a></li>
@@ -157,8 +158,9 @@
 
         <!-- <a href="path/to/your/pdf" target="_blank">Click here to open PDF</a> -->
 
-        <button type="submit">Submit</button>
-        <button type="submit" id="show">show invoice</button>
+        <button type="button" id="aftkasa" onclick="showInvoice()">Submit</button>
+        <button type="button" id="show" style="display: none;background-color: rgba(48, 208, 104, 0.722);" onclick="dir1()">show invoice</button>
+        <!-- <a target="_blank"></a> -->
 
     </form>
 
@@ -249,6 +251,23 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        function showInvoice(){
+            if(document.getElementById("cardNumber").value &&
+            document.getElementById("expireDate").value &&
+            document.getElementById("paymentAmount").value &&
+            document.getElementById("name").value &&
+            document.getElementById("email").value &&
+            document.getElementById("phoneNumber").value &&
+            document.getElementById("cvv").value)
+            {
+                document.getElementById("show").style.display = "inline-block";
+            }
+        }
+        function dir1(){
+            window.open("./Invoice/invoice-view.html", "_blank");
+        }
+    </script>
 </body>
 
 </html>

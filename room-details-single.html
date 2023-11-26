@@ -188,7 +188,7 @@
                                         <i class="icon_star"></i>
                                         <i class="icon_star-half_alt"></i>
                                     </div>
-                                    <a href="#">Booking Now</a>
+                                    <a href="./payment.html">Booking Now</a>
                                 </div>
                             </div>
                             <h2>159$<span>/Pernight</span></h2>
@@ -297,7 +297,30 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="room-booking">
+
+
+                        
+
                         <h3>Your Reservation</h3>
+                        <!-- message -->
+                        <div class="alert alert-success alert-dismissible fade show" role="alert" id="messageSuccess" style="display: none;">
+                                <strong>THis!</strong> Room is
+                                <a href="#" class="alert-link">Available.</a>You can Book Now
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+						</div>
+                        <!-- start message error -->
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert" id="messageError"
+                            style="display: none">
+                            <strong>Error!</strong> You
+                            <a href="#" class="alert-link">Have</a> to fill the Check-in  and Check-out
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <!-- end message error -->
+                        <!-- message -->
                         <form action="#">
                             <div class="check-date">
                                 <label for="date-in">Check In:</label>
@@ -321,7 +344,7 @@
                                     <option value="">1 Room</option>
                                 </select>
                             </div>
-                            <button type="submit">Check Availability</button>
+                            <button type="button" onclick="successfully()">Check Availability</button>
                         </form>
                     </div>
                 </div>
@@ -407,6 +430,26 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        const elementSuccess = document.getElementById("messageSuccess");
+        const elementError = document.getElementById("messageError");
+        function successfully(){
+            var check_in = document.getElementById("date-in");
+            var check_out = document.getElementById("date-out");
+            if(check_in.value != "" && check_out.value != ""){
+                elementSuccess.style.display = "block";
+                setTimeout(() => {
+                    elementSuccess.style.display = "none";
+                }, 5000);
+                    }
+            else{
+                elementError.style.display = "block";
+                setTimeout(() => {
+                    elementError.style.display = "none";
+                }, 3000);
+                    }
+            }
+    </script>
 </body>
 
 </html>
