@@ -23,7 +23,7 @@
 
 </head>
 
-<body>
+<body id="body">
 	<!-- start header -->
 	<div class="main-wrapper">
 		<div class="header">
@@ -212,9 +212,9 @@
 						<div class="col-sm-7 col-8 text-right">
 							<div class="mt-5">
 								<div class="btn-group btn-group-sm">
-									<button class="btn btn-white">CSV</button>
-									<button class="btn btn-white">PDF</button>
-									<button class="btn btn-white"><i class="fas fa-print fa-lg"></i> Print</button>
+									<!-- <button class="btn btn-white">CSV</button>
+									<button class="btn btn-white">PDF</button> -->
+									<button class="btn btn-white" onclick="printPdf()"><i class="fas fa-print fa-lg"></i> Print</button>
 								</div>
 							</div>
 						</div>
@@ -223,7 +223,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="card">
-							<div class="card-body">
+							<div class="card-body" id="invoice">
 								<div class="row custom-invoice">
 									<div class="col-6 col-sm-6 m-b-20">
 										<img src="assets/img/logo-dark.png" class="inv-logo" alt="">
@@ -388,6 +388,15 @@
 
 			});
 		});
+	</script>
+	<script>
+		function printPdf(){
+			let printContents = document.getElementById('invoice').innerHTML;
+			let originalContents = document.body.innerHTML;
+			document.body.innerHTML = printContents;
+			window.print();
+			document.body.innerHTML = originalContents;
+		}
 	</script>
 </body>
 
