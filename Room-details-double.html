@@ -7,7 +7,7 @@
     <meta name="keywords" content="Sona, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sona | Template</title>
+    <title>Hotel</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
@@ -118,7 +118,7 @@
                     <div class="col-lg-2">
                         <div class="logo">
                             <a href="./index.html">
-                                <img src="img/logo.png" alt="">
+                                <!-- <img src="img/logo.png" alt=""> -->
                             </a>
                         </div>
                     </div>
@@ -127,7 +127,7 @@
                             <nav class="mainmenu">
                                 <ul>
                                     <li class="active"><a href="./index.html">Home</a></li>
-                                    <li><a href="#rooms">Rooms</a></li>
+                                    <li><a href="index.html#rooms">Rooms</a></li>
                                     <li><a href="./index.html">Room Categories</a>
                                         <ul class="dropdown">
                                             <li><a href="./Single-Room.html">single Room</a></li>
@@ -141,9 +141,9 @@
                                     <li><a href="./contact.html">Contact</a></li>
                                 </ul>
                             </nav>
-                            <div class="nav-right search-switch">
+                            <!-- <div class="nav-right search-switch">
                                 <i class="icon_search"></i>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -191,6 +191,37 @@
                                     <a href="#">Booking Now</a>
                                 </div>
                             </div>
+                            <section class="comp-section" id="card_offer1">
+                                <div class="section-header">
+                                
+                                <div class="line"></div>
+                                </div>
+                                <div class="row">
+                                <div class="col-md-12">
+                                <div class="card">
+                                <div class="card-header">
+                                <h3 class="section-title">Offers</h3>
+                                </div>
+                                <div class="card-body" id="span1">
+                                <!-- <h1>h1. Bootstrap heading</h1> -->
+                                
+                                <h2>if you booked more than 2 room with the same room type</h2>
+                                <h3>you will get <span id="span1"></span> discount for the room with highest price</h3>
+
+                                <h2>if you booked more than 2 room with different room type</h2>
+                                <h3>you will get <span id="span2"></span> discount for the room with highest price</h3>
+
+                                <h2>if you booked 6 family room </h2>
+                                <h3>you will get <span id="span3"></span> discount of the total price </h3>
+
+                                <h2>if you booked the room/s for more than 10 days</h2>
+                                <h3>you will get <span id="span4"></span> discount for the total bill</h3>
+                                
+                            </div>
+                                </div>
+                                </div>
+                                </div>
+                            </section>
                             <h2>159$<span>/Pernight</span></h2>
                             <table>
                                 <tbody>
@@ -338,6 +369,8 @@
                                 <label for="room">Room:</label>
                                 <select id="room">
                                     <option value="">1 Room</option>
+                                    <option value="">2 Room</option>
+                                    <option value="">3 Room</option>
                                 </select>
                             </div>
                             <button type="button" onclick="notAvailable()">Check Availability</button>
@@ -445,6 +478,26 @@
                 }, 3000);
                     }
             }
+    </script>
+    <script>
+        var myObject = ["10", "15", "20" , "25"];
+                let offer = "";
+                    // loop through the array
+                    offer += `
+                            <h2>if you booked more than 2 room with the same room type</h2>
+                            <h3>you will get ${myObject[0]}% discount for the room with highest price</h3>
+
+                            <h2>if you booked more than 2 room with different room type</h2>
+                            <h3>you will get ${myObject[1]}% discount for the room with highest price</h3>
+
+                            <h2>if you booked family room </h2>
+                            <h3>you will get ${myObject[2]}% discount of the total price </h3>
+
+                            <h2>if you booked the room/s for more than 10 days</h2>
+                            <h3>you will get ${myObject[3]}% discount for the total bill</h3>
+                    `;
+                // display variable table in table html
+                document.getElementById("span1").innerHTML = offer;
     </script>
 </body>
 
