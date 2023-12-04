@@ -23,7 +23,7 @@
 					<div class="login-right">
 						<div class="login-right-wrap">
 							<h1>Login</h1>
-							<p class="account-subtitle">Access to our dashboard</p>
+							<p class="account-subtitle"></p>
 					<!-- start message error -->
 					<div class="alert alert-danger alert-dismissible fade show" role="alert" id="messageError" style="display: none;"
 						>
@@ -36,10 +36,10 @@
 					<!-- end message error -->
 							<form action="index.html">
 								<div class="form-group">
-									<input class="form-control" type="text" placeholder="Email" id="email">
+									<input class="form-control" type="text" placeholder="Email or Username" id="email">
 								</div>
 								<div class="form-group">
-									<input class="form-control" type="text" placeholder="Password" id="password">
+									<input class="form-control" type="password" placeholder="Password" id="password">
 								</div>
 								<div class="form-group">
 									<button class="btn btn-primary btn-block" type="button" onclick="auth()">Login</button>
@@ -65,7 +65,7 @@
 	<script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 	<script src="assets/js/script.js"></script>
 	<script>
-		var infoAdmin = [["admin","admin"], ["toqa","123"], ["abdelwhaed","10"]];
+		var infoAdmin = [["admin","admin"], ["toqa","123"], ["abdelwhaed","100"]];
 		var myObject = JSON.parse(localStorage.getItem("user"));
 		var Email = document.getElementById("email");
 		var Password = document.getElementById("password");
@@ -78,12 +78,15 @@
 					return;
 				}
 			}
-			for(i =0; i < myObject.length;i++)
+			if(localStorage.user != null)
 			{
-				if(Email.value == myObject[i].name && Password.value == myObject[i].password)
+				for(i =0; i < myObject.length;i++)
 				{
-					window.location.href = "../index.html";
-					return;
+					if(Email.value == myObject[i].name && Password.value == myObject[i].password)
+					{
+						window.location.href = "../index.html";
+						return;
+					}
 				}
 			}
 			elementError.style.display = "block";
