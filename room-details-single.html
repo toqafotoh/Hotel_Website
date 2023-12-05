@@ -205,17 +205,17 @@
                                 <div class="card-body" id="span1">
                                 <!-- <h1>h1. Bootstrap heading</h1> -->
                                 
-                                <h2>if you booked more than 2 room with the same room type</h2>
+                                <!-- <h2>if you booked more than 2 room with the same room type</h2>
+                                <h3>you will get <span id="span1"></span> discount for the room with highest price</h3> -->
+
+                                <!-- <h2>if you booked more than 2 room with different room type</h2>
                                 <h3>you will get <span id="span1"></span> discount for the room with highest price</h3>
 
-                                <h2>if you booked more than 2 room with different room type</h2>
-                                <h3>you will get <span id="span2"></span> discount for the room with highest price</h3>
+                                <h2>if you booked family room and another room with different type</h2>
+                                <h3>you will get <span id="span2"></span> discount of the total price </h3>
 
-                                <h2>if you booked 6 family room </h2>
-                                <h3>you will get <span id="span3"></span> discount of the total price </h3>
-
-                                <h2>if you booked the room/s for more than 10 days</h2>
-                                <h3>you will get <span id="span4"></span> discount for the total bill</h3>
+                                <h2>if you booked the room for more than 10 days</h2>
+                                <h3>you will get <span id="span3"></span> discount for the total bill</h3> -->
                                 
                             </div>
                                 </div>
@@ -483,26 +483,8 @@
                     }
             }
     </script>
-    <script>
-        var myObject = ["10", "15", "20" , "25"];
-                let offer = "";
-                    // loop through the array
-                    offer += `
-                            <h2>if you booked more than 2 room with the same room type</h2>
-                            <h3>you will get ${myObject[0]}% discount for the room with highest price</h3>
-
-                            <h2>if you booked more than 2 room with different room type</h2>
-                            <h3>you will get ${myObject[1]}% discount for the room with highest price</h3>
-
-                            <h2>if you booked family room </h2>
-                            <h3>you will get ${myObject[2]}% discount of the total price </h3>
-
-                            <h2>if you booked the room/s for more than 10 days</h2>
-                            <h3>you will get ${myObject[3]}% discount for the total bill</h3>
-                    `;
-                // display variable table in table html
-                document.getElementById("span1").innerHTML = offer;
-    </script>
+    
+    <script src="./js/CRUDS_show_offers.js"></script>
 </body>
 
 </html>
